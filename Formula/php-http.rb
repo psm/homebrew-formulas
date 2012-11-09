@@ -7,7 +7,7 @@ class PhpHttp < PHPExtension
   homepage ''
   url 'http://pecl.php.net/get/pecl_http-1.7.4.tgz'
   version '1.7.4'
-  sha1 'cafd6ba92ac1c9f500a6c1e300bbe8819daddfae'
+  sha1 '3a2276c765fccb58ae0a96e71bde26657952d139'
   
   depends_on 'autoconf' => :build
   depends_on 'php'
@@ -18,7 +18,7 @@ class PhpHttp < PHPExtension
   
   def install
     # ENV.j1  # if your formula's build system can't parallelize
-    Dir.chdir "#{extension}-#{version}"
+    Dir.chdir "pecl_#{extension}-#{version}"
     system "#{(Formula.factory 'php').bin}/phpize"
     system "./configure"
     system "make"

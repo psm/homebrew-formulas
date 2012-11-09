@@ -27,6 +27,25 @@ class Php < Formula
   def install
     
     readline = `/usr/local/bin/brew list --versions readline`.split(/\s/).last
+    home_path = File.expand_path("~")
+    
+    config_pear = "#{config_path}/pear.conf"
+    user_pear = "#{home_path}/pear.conf"
+    config_pearrc = "#{config_path}/.pearrc"
+    user_pearrc = "#{home_path}/.pearrc"
+    if File.exists?(config_pear) || File.exists?(user_pear) || File.exists?(config_pearrc) || File.exists?(user_pearrc)
+      opoo "Backing up all known pear.conf and .pearrc files"
+      opoo <<-INFO
+If you have a pre-existing pear install outside
+         of homebrew-php, or you are using a non-standard
+         pear.conf location, installation may fail.
+INFO
+      mv(config_pear, "#{config_pear}-backup") if File.exists? config_pear
+      mv(user_pear, "#{user_pear}-backup") if File.exists? user_pear
+      mv(config_pearrc, "#{config_pearrc}-backup") if File.exists? config_pearrc
+      mv(user_pearrc, "#{user_pearrc}-backup") if File.exists? user_pearrc
+    end
+    
     
     args = "--prefix=#{prefix}",
             "--enable-fpm",
@@ -96,8 +115,6 @@ class Php < Formula
       s.sub! 'upload_max_filesize = 2M', 'upload_max_filesize = 20M'
     end
     
-    
-    
     config_path.install "sapi/fpm/php-fpm.conf"
     inreplace config_path+"php-fpm.conf" do |s|
       s.sub!(/^;?daemonize\s*=.+$/,'daemonize = no')
@@ -110,6 +127,16 @@ class Php < Formula
       s.sub! /^group\s*=.+/, "group = staff"
       s.sub! /^listen\s*=.+/, 'listen = /private/var/tmp/php.sock'
       s.sub! /^;?pm\.max_requests\s*=.+/, 'pm.max_requests = 500'
+    end
+    
+    begin
+      (prefix+'var/log').mkpath
+      touch prefix+'var/log/php-fpm.log'
+      rm_f("#{config_pear}-backup") if File.exists? "#{config_pear}-backup"
+      rm_f("#{user_pear}-backup") if File.exists? "#{user_pear}-backup"
+      rm_f("#{config_pearrc}-backup") if File.exists? "#{config_pearrc}-backup"
+      rm_f("#{user_pearrc}-backup") if File.exists? "#{user_pearrc}-backup"
+    rescue Exception => e
     end
     
     system "#{prefix}/bin/pecl config-set php_bin #{prefix}/bin/php"

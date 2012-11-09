@@ -7,10 +7,11 @@ class PhpImagick < PHPExtension
   homepage ''
   url 'http://pecl.php.net/get/imagick-3.1.0RC2.tgz'
   version '3.1.0RC2'
-  sha1 'cafd6ba92ac1c9f500a6c1e300bbe8819daddfae'
+  sha1 '29b6dcd534cde6b37ebe3ee5077b71a9eed685c2'
   
   depends_on 'autoconf' => :build
   depends_on 'php'
+  depends_on 'imagemagick'
   
   def extension
     'imagick'
