@@ -26,11 +26,15 @@ class PHPExtension < Formula
     begin
       <<-EOS.undent
       [#{extension}]
-      extension="#{module_path}"
+      #{kind}="#{module_path}"
       EOS
     rescue Exception => e
       nil
     end
+  end
+  
+  def kind
+    'extension'
   end
   
   def write_config_file
