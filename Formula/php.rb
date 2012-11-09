@@ -33,7 +33,7 @@ class Php < Formula
             "--sysconfdir=#{etc}/php/",
             "--with-config-file-scan-dir=#{etc}/php/config.d",
             "--enable-cli",
-            "--with-config-file-path=#{etc}php/",
+            "--with-config-file-path=#{etc}/php/",
             "--with-libxml-dir=/usr",
             "--with-openssl=/usr",
             "--with-kerberos=/usr",
