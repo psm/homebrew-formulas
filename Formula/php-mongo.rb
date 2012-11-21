@@ -7,7 +7,7 @@ class PhpMongo < PHPExtension
   homepage ''
   url 'http://pecl.php.net/get/mongo-1.3.0RC3.tgz'
   version '1.3.0RC3'
-  sha1 '03f45ce3f8fdd327b01427bf617deeff88277bb0'
+  sha1 '267923c079a028fad0b167bc7ac3d76d7b8dac80'
   
   depends_on 'autoconf' => :build
   depends_on 'php'
