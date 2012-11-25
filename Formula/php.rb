@@ -5,15 +5,15 @@ require 'formula'
 
 class Php < Formula
   homepage ''
-  url 'http://www.php.net/distributions/php-5.4.8.tar.bz2'
-  version '5.4.8'
-  sha1 'ed9c4e31da827af8a4d4b1adf3dfde17d11c0b34'
-
+  url 'http://www.php.net/distributions/php-5.4.9.tar.bz2'
+  version '5.4.9'
+  sha1 '9ff23df45312a167fbd031f9413feef9b6fd8bb2'
+  env :userpaths
   # depends_on 'cmake' => :build
   depends_on :x11
   depends_on 'curl'
   depends_on 'gettext'
-  depends_on 'icu4c'
+  #depends_on 'icu4c'
   #depends_on 'jpeg'
   #depends_on 'libpng'
   #depends_on 'mcrypt'
@@ -89,7 +89,6 @@ INFO
             "--with-xsl=/usr",
             "--enable-zip",
             "--enable-exif",
-            "--enable-intl",
             "--with-icu-dir=#{Formula.factory('icu4c').prefix}",
             "--with-readline=/usr/local/Cellar/readline/#{readline}",
             "--with-gettext=#{Formula.factory('gettext').prefix}"
