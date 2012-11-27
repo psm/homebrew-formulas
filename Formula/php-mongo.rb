@@ -5,9 +5,9 @@ require File.join(File.dirname(__FILE__), 'phpextension')
 
 class PhpMongo < PHPExtension
   homepage ''
-  url 'http://pecl.php.net/get/mongo-1.3.0RC3.tgz'
-  version '1.3.0RC3'
-  sha1 '267923c079a028fad0b167bc7ac3d76d7b8dac80'
+  url 'http://pecl.php.net/get/mongo-1.3.0.tgz'
+  version '1.3.0'
+  sha1 'cf998f166a4deeb35eedf2d288f93402d4b89a1b'
   
   depends_on 'autoconf' => :build
   depends_on 'php'
