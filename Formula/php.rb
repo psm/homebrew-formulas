@@ -5,9 +5,9 @@ require 'formula'
 
 class Php < Formula
   homepage ''
-  url 'http://www.php.net/distributions/php-5.4.9.tar.bz2'
-  version '5.4.9'
-  sha1 '9ff23df45312a167fbd031f9413feef9b6fd8bb2'
+  url 'http://www.php.net/distributions/php-5.4.12.tar.bz2'
+  version '5.4.12'
+  sha1 '9e1af30b763ba3de19b68b9b8abde1aae1e5e630'
   env :userpaths
   # depends_on 'cmake' => :build
   depends_on :x11
@@ -89,6 +89,7 @@ INFO
             "--with-xsl=/usr",
             "--enable-zip",
             "--enable-exif",
+            "--enable-intl",
             "--with-icu-dir=#{Formula.factory('icu4c').prefix}",
             "--with-readline=/usr/local/Cellar/readline/#{readline}",
             "--with-gettext=#{Formula.factory('gettext').prefix}"
