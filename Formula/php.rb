@@ -5,9 +5,9 @@ require 'formula'
 
 class Php < Formula
   homepage ''
-  url 'http://www.php.net/distributions/php-5.4.12.tar.bz2'
-  version '5.4.12'
-  sha1 '9e1af30b763ba3de19b68b9b8abde1aae1e5e630'
+  url 'http://www.php.net/distributions/php-5.4.15.tar.bz2'
+  version '5.4.15'
+  sha1 '63126ef43e45adfcb2dd19590a4fb88da3c6d280'
   env :userpaths
   # depends_on 'cmake' => :build
   depends_on :x11

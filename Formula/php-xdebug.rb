@@ -5,9 +5,9 @@ require File.join(File.dirname(__FILE__), 'phpextension')
 
 class PhpXdebug < PHPExtension
   homepage ''
-  url 'http://xdebug.org/files/xdebug-2.2.1.tgz'
-  version '2.2.1'
-  sha1 '8b4aec5f68f2193d07bf4839ee46ff547740ed7e'
+  url 'http://pecl.php.net/get/xdebug-2.2.3.tgz'
+  version '2.2.3'
+  sha1 '045dee86f69051d7944da594db648b337a97f48a'
   
   depends_on 'autoconf' => :build
   depends_on 'php'
