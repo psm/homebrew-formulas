@@ -10,6 +10,7 @@ class PhpImagick < PHPExtension
   sha1 '29b6dcd534cde6b37ebe3ee5077b71a9eed685c2'
   
   depends_on 'autoconf' => :build
+  depends_on 'pkg-config' => :build
   depends_on 'php'
   depends_on 'imagemagick'
   
