@@ -5,9 +5,9 @@ require File.join(File.dirname(__FILE__), 'phpextension')
 
 class PhpHttp < PHPExtension
   homepage ''
-  url 'http://pecl.php.net/get/pecl_http-1.7.5.tgz'
-  version '1.7.5'
-  sha1 '57076918f12b46688da0052f6da55d261ff59dbd'
+  url 'http://pecl.php.net/get/pecl_http-1.7.6.tgz'
+  version '1.7.6'
+  #md5 '57076918f12b46688da0052f6da55d261ff59dbd'
   
   depends_on 'autoconf' => :build
   depends_on 'php'

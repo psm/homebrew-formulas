@@ -7,7 +7,7 @@ class PhpXdebug < PHPExtension
   homepage ''
   url 'http://pecl.php.net/get/xdebug-2.2.3.tgz'
   version '2.2.3'
-  sha1 '045dee86f69051d7944da594db648b337a97f48a'
+  #sha1 '045dee86f69051d7944da594db648b337a97f48a'
   
   depends_on 'autoconf' => :build
   depends_on 'php'
