@@ -5,7 +5,7 @@ require 'formula'
 
 class Php < Formula
   homepage ''
-  url 'http://www.php.net/distributions/php-5.5.0.tar.bz2'
+  url 'http://museum.php.net/php5/php-5.5.0.tar.bz2'
   version '5.5.0'
   sha1 '07fb4d5a75dc817e24979a5bb3a5c01124acd667'
   env :userpaths
