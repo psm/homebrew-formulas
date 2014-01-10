@@ -7,7 +7,7 @@ class PhpHttp < PHPExtension
   homepage ''
   url 'http://pecl.php.net/get/pecl_http-1.7.6.tgz'
   version '1.7.6'
-  md5 '44e28b6d2d9d352c5b949f14bc4dd612e4365c85'
+  md5 '4926c17a24a11a9b1cf3ec613fad97cb'
   
   depends_on 'autoconf' => :build
   depends_on 'php'
